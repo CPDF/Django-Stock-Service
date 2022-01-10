@@ -1,0 +1,43 @@
+version: '3.2'
+
+services:
+
+  web:
+    build: .
+    command: bash -c "cd stock_service &&
+                      python manage.py runserver 0.0.0.0:8001 &
+                      cd api_service &&
+                      python manage.py makemigrations && 
+                      python manage.py migrate &&
+                      python manage.py runserver 0.0.0.0:8000"
+
+
+    container_name: django_challenge-main
+    volumes:
+      - .:/django_challenge-main
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+    dns:
+    - 8.8.8.8
+    - 4.4.4.4
+    - 192.168.9.45
+
+  rabbitmq:
+    image: rabbitmq:3.8-management-alpine
+    container_name: 'rabbitmq'
+    ports:
+        - 5673:5672
+        - 15673:15672
+    volumes:
+        - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+        - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    networks:
+        - rabbitmq_django
+    
+    
+
+
+networks:
+  rabbitmq_django:
+    driver: bridge

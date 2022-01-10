@@ -1,0 +1,21 @@
+{
+    "stock_data": [
+        {
+            "name": "APPLE",
+            "symbol": "AAPL.US",
+            "open": 123.66,
+            "high": 123.66, 
+            "low": 122.49,
+            "close": 123
+        },
+        {
+            "name": "APPLE2",
+            "symbol": "AAPL.US",
+            "open": 124.66,
+            "high": 124.66, 
+            "low": 124.49,
+            "close": 123
+        }
+
+    ]
+}

@@ -1,0 +1,49 @@
+django_challenge-main/
+    api_service/
+        api/
+            migrations
+        __init__.py
+        admin.py
+        apps.py
+        models.py
+        serializers.py
+        tests.py
+        views.py
+
+        api_service/
+            __init__.py
+            asgi.py
+            settings.py
+            urls.py
+            wsgi.py
+
+        db.sqlite3
+        manage.py
+
+    static/
+        data.json
+
+    stock_service/
+        stock_service/
+            __init__.py
+            asgi.py
+            settings.py
+            urls.py
+            wsgi.py
+
+        stocks/
+            __init__.py
+            apps.py
+            test.py
+            views.py
+
+        manage.py
+
+    .codeclimate.yml
+    .gitignore
+    .gitlab-ci.yml
+    diagram.svg
+    Dockerfile
+    README.md
+    requirements.txt
+
